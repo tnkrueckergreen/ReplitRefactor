@@ -1,0 +1,495 @@
+/* =================================================================
+   PAGE-SPECIFIC STYLES
+   Specific layouts and overrides for individual pages
+   ================================================================= */
+
+/* =================================================================
+   HOME PAGE
+   ================================================================= */
+#home-page {
+    padding-bottom: var(--space-3xl);
+}
+
+/* Welcome Section */
+#home-page .welcome-section {
+    text-align: center;
+    padding: var(--space-4xl) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#home-page .welcome-section h1 {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.03em;
+}
+
+#home-page .welcome-section p {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Content Grid */
+#home-page .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-4xl);
+    margin-top: var(--space-4xl);
+}
+
+/* Featured Section */
+#home-page .featured-section h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-2xl);
+}
+
+/* Recent Articles */
+#home-page .recent-section h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-xl);
+}
+
+#home-page .recent-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+/* =================================================================
+   ARTICLE LIST PAGES
+   ================================================================= */
+.article-grid-page {
+    padding: var(--space-3xl) 0;
+}
+
+.article-grid-page .page-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.article-grid-page .page-header h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-md);
+}
+
+.article-grid-page .page-header p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+}
+
+/* Article Grid */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
+}
+
+/* =================================================================
+   SINGLE ARTICLE PAGE
+   ================================================================= */
+.single-article-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-3xl) 0;
+}
+
+.single-article-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.single-article-header h1 {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-lg);
+    line-height: var(--leading-tight);
+}
+
+.single-article-description {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+}
+
+.single-article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Article Image */
+.single-article-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3xl);
+}
+
+/* Article Content */
+.single-article-content {
+    font-size: var(--text-lg);
+    line-height: var(--leading-loose);
+}
+
+.single-article-content p {
+    margin-bottom: var(--space-xl);
+}
+
+.single-article-content h2 {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-lg);
+}
+
+.single-article-content h3 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+}
+
+.single-article-content blockquote {
+    margin: var(--space-2xl) 0;
+    padding-left: var(--space-xl);
+    border-left: 4px solid var(--color-brand-green);
+    font-style: italic;
+    font-size: var(--text-xl);
+}
+
+/* =================================================================
+   ABOUT PAGE
+   ================================================================= */
+.about-page {
+    padding: var(--space-3xl) 0;
+}
+
+.about-page .page-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.about-page .page-header h1 {
+    margin-bottom: var(--space-lg);
+}
+
+.about-page .page-header p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
+}
+
+/* Staff Grid */
+.staff-section {
+    margin-top: var(--space-3xl);
+}
+
+.staff-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-xl);
+}
+
+/* =================================================================
+   CONTACT PAGE
+   ================================================================= */
+.contact-page {
+    padding: var(--space-3xl) 0;
+}
+
+.contact-page .page-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    margin-top: var(--space-3xl);
+}
+
+/* Contact Details Card */
+.contact-details-card {
+    background-color: var(--color-light-gray);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+}
+
+.contact-details-card h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-info-list svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-brand-green);
+    flex-shrink: 0;
+}
+
+/* Map Embed */
+.map-embed {
+    margin-top: var(--space-2xl);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 300px;
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* =================================================================
+   ISSUES PAGE
+   ================================================================= */
+#issues-page {
+    padding: var(--space-3xl) 0;
+}
+
+#issues-page .page-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.issue-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-xl);
+}
+
+/* =================================================================
+   SUBSCRIBE PAGE
+   ================================================================= */
+.subscribe-page {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl) 0;
+}
+
+.subscribe-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-content h1 {
+    margin-bottom: var(--space-lg);
+}
+
+.subscribe-content p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2xl);
+}
+
+.subscribe-content .subscribe-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* =================================================================
+   SEARCH RESULTS PAGE
+   ================================================================= */
+#search-results-page {
+    padding: var(--space-3xl) 0;
+}
+
+#search-results-page .page-header {
+    margin-bottom: var(--space-2xl);
+}
+
+#search-results-page .page-header h1 {
+    font-size: var(--text-3xl);
+}
+
+.search-query {
+    color: var(--color-brand-green);
+}
+
+.results-count {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2xl);
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--space-4xl) 0;
+}
+
+.no-results p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+}
+
+/* =================================================================
+   TABLET RESPONSIVE OVERRIDES
+   ================================================================= */
+@media (max-width: 1023px) {
+    /* Home page */
+    #home-page .content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+    }
+    
+    /* Contact page */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================================================================
+   MOBILE RESPONSIVE OVERRIDES
+   ================================================================= */
+@media (max-width: 767px) {
+    /* Global page adjustments */
+    .page-header h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    .page-header p {
+        font-size: var(--text-base);
+    }
+    
+    /* Home page */
+    #home-page .welcome-section {
+        padding: var(--space-2xl) 0;
+    }
+    
+    #home-page .welcome-section h1 {
+        font-size: var(--text-4xl);
+    }
+    
+    #home-page .welcome-section p {
+        font-size: var(--text-base);
+    }
+    
+    #home-page .content-grid {
+        margin-top: var(--space-2xl);
+    }
+    
+    #home-page .recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+    
+    /* Article pages */
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Single article */
+    .single-article-wrapper {
+        padding: var(--space-xl) 0;
+    }
+    
+    .single-article-header h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    .single-article-description {
+        font-size: var(--text-base);
+    }
+    
+    .single-article-content {
+        font-size: var(--text-base);
+    }
+    
+    /* About page */
+    .about-page .page-header h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    .staff-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--space-md);
+    }
+    
+    /* Contact page */
+    .contact-details-card {
+        padding: var(--space-lg);
+    }
+    
+    .contact-info-list li {
+        font-size: var(--text-sm);
+    }
+    
+    .map-embed {
+        height: 250px;
+    }
+    
+    /* Issues page */
+    #issues-page .issue-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--space-lg);
+    }
+    
+    /* Subscribe page */
+    .subscribe-content h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    .subscribe-content p {
+        font-size: var(--text-base);
+    }
+}
+
+/* =================================================================
+   EXTRA SMALL MOBILE OVERRIDES
+   ================================================================= */
+@media (max-width: 479px) {
+    /* Even smaller text */
+    #home-page .welcome-section h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    #home-page .recent-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .single-article-header h1 {
+        font-size: var(--text-2xl);
+    }
+    
+    .about-page .page-header h1 {
+        font-size: var(--text-2xl);
+    }
+    
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #issues-page .issue-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

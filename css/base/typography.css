@@ -1,0 +1,150 @@
+/* =================================================================
+   GLOBAL TYPOGRAPHY
+   Base typography styles that apply across the entire site
+   ================================================================= */
+
+/* Base font size and line height */
+html {
+    font-size: 16px; /* Base for rem calculations */
+}
+
+body {
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+}
+
+/* Headings */
+h1 {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-lg);
+}
+
+h2 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+h5 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+/* Body text */
+p {
+    margin-bottom: var(--space-lg);
+    line-height: var(--leading-relaxed);
+}
+
+/* Links */
+a {
+    color: var(--color-brand-green);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: var(--space-lg);
+    padding-left: var(--space-xl);
+}
+
+li {
+    margin-bottom: var(--space-xs);
+    line-height: var(--leading-relaxed);
+}
+
+/* Blockquotes */
+blockquote {
+    margin: var(--space-xl) 0;
+    padding-left: var(--space-lg);
+    border-left: 4px solid var(--color-brand-green);
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+/* Code */
+code {
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-size: 0.875em;
+    background-color: var(--color-light-gray);
+    padding: 0.125em 0.25em;
+    border-radius: var(--radius-sm);
+}
+
+pre {
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Text utilities */
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+
+.text-secondary { color: var(--color-text-secondary); }
+.text-brand { color: var(--color-brand-green); }
+
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.italic { font-style: italic; }
+.not-italic { font-style: normal; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

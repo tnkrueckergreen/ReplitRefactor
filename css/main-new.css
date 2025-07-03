@@ -1,0 +1,73 @@
+/* =================================================================
+   ANDOVERVIEW MAIN CSS
+   Modern, maintainable CSS architecture with integrated responsive design
+   ================================================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+
+/* =================================================================
+   LAYER 1: BASE
+   Foundation styles and CSS custom properties
+   ================================================================= */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
+
+/* =================================================================
+   LAYER 2: LAYOUT
+   Major layout components and grid systems
+   ================================================================= */
+@import url('layout/grid.css');
+@import url('layout/header.css');
+@import url('layout/footer.css');
+
+/* =================================================================
+   LAYER 3: COMPONENTS
+   Reusable UI components
+   ================================================================= */
+@import url('components/cards.css');
+@import url('components/forms.css');
+@import url('components/modals.css');
+
+/* =================================================================
+   LAYER 4: PAGES
+   Page-specific styles and overrides
+   ================================================================= */
+@import url('pages/pages.css');
+
+/* =================================================================
+   LAYER 5: UTILITIES
+   Helper classes and utility functions
+   ================================================================= */
+@import url('utilities/helpers.css');
+
+/* =================================================================
+   LAYER 6: VENDOR OVERRIDES
+   Third-party library customizations (if needed)
+   ================================================================= */
+
+/* PDF.js customizations */
+.pdfViewer {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+/* =================================================================
+   DEBUG MODE (Development Only)
+   Uncomment to visualize layout structure
+   ================================================================= */
+
+/*
+* {
+    outline: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.container {
+    outline: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.grid {
+    outline: 2px solid rgba(0, 0, 255, 0.3);
+}
+*/

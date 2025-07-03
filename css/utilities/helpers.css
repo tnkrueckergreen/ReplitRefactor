@@ -1,0 +1,311 @@
+/* =================================================================
+   UTILITY HELPERS
+   Reusable utility classes for common patterns
+   ================================================================= */
+
+/* =================================================================
+   VISIBILITY UTILITIES
+   ================================================================= */
+
+/* Screen reader only - hides visually but accessible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-brand-green);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    z-index: var(--z-tooltip);
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+/* =================================================================
+   LOADING STATES
+   ================================================================= */
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--color-brand-green);
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--color-light-gray) 25%,
+        #e5e5e5 50%,
+        var(--color-light-gray) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* =================================================================
+   ANIMATIONS
+   ================================================================= */
+
+.fade-in {
+    animation: fadeIn var(--transition-smooth);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp var(--transition-smooth);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scale-in {
+    animation: scaleIn var(--transition-smooth);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =================================================================
+   ASPECT RATIOS
+   ================================================================= */
+
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-4-3 { aspect-ratio: 4 / 3; }
+.aspect-21-9 { aspect-ratio: 21 / 9; }
+
+/* =================================================================
+   BORDERS & DIVIDERS
+   ================================================================= */
+
+.border { border: 1px solid var(--color-border); }
+.border-t { border-top: 1px solid var(--color-border); }
+.border-r { border-right: 1px solid var(--color-border); }
+.border-b { border-bottom: 1px solid var(--color-border); }
+.border-l { border-left: 1px solid var(--color-border); }
+
+.divide-y > * + * { border-top: 1px solid var(--color-border); }
+.divide-x > * + * { border-left: 1px solid var(--color-border); }
+
+/* =================================================================
+   SHADOWS
+   ================================================================= */
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-none { box-shadow: none; }
+
+/* =================================================================
+   RADIUS
+   ================================================================= */
+
+.rounded-none { border-radius: 0; }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: 9999px; }
+
+/* =================================================================
+   OVERFLOW
+   ================================================================= */
+
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-scroll { overflow: scroll; }
+.overflow-x-auto { overflow-x: auto; }
+.overflow-y-auto { overflow-y: auto; }
+
+/* =================================================================
+   POSITIONING
+   ================================================================= */
+
+.static { position: static; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.sticky { position: sticky; }
+
+.inset-0 { inset: 0; }
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+
+/* =================================================================
+   Z-INDEX
+   ================================================================= */
+
+.z-0 { z-index: var(--z-base); }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+.z-auto { z-index: auto; }
+
+/* =================================================================
+   OPACITY
+   ================================================================= */
+
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+/* =================================================================
+   CURSOR
+   ================================================================= */
+
+.cursor-auto { cursor: auto; }
+.cursor-default { cursor: default; }
+.cursor-pointer { cursor: pointer; }
+.cursor-wait { cursor: wait; }
+.cursor-text { cursor: text; }
+.cursor-move { cursor: move; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+/* =================================================================
+   USER SELECT
+   ================================================================= */
+
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+.select-all { user-select: all; }
+.select-auto { user-select: auto; }
+
+/* =================================================================
+   POINTER EVENTS
+   ================================================================= */
+
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+/* =================================================================
+   PRINT UTILITIES
+   ================================================================= */
+
+@media print {
+    .no-print { display: none !important; }
+    
+    .print-only {
+        display: block !important;
+    }
+    
+    .page-break-before {
+        page-break-before: always;
+    }
+    
+    .page-break-after {
+        page-break-after: always;
+    }
+    
+    .avoid-break {
+        page-break-inside: avoid;
+    }
+}
+
+/* =================================================================
+   RESPONSIVE UTILITIES
+   ================================================================= */
+
+/* These utilities follow mobile-first approach */
+
+/* Show/hide at different breakpoints */
+.sm\:show { display: none; }
+.md\:show { display: none; }
+.lg\:show { display: none; }
+
+@media (min-width: 640px) {
+    .sm\:show { display: block; }
+}
+
+@media (min-width: 768px) {
+    .md\:show { display: block; }
+}
+
+@media (min-width: 1024px) {
+    .lg\:show { display: block; }
+}
+
+/* =================================================================
+   FOCUS STATES
+   ================================================================= */
+
+.focus-ring:focus {
+    outline: 2px solid var(--color-brand-green);
+    outline-offset: 2px;
+}
+
+.focus-ring-inset:focus {
+    outline: 2px solid var(--color-brand-green);
+    outline-offset: -2px;
+}
+
+/* =================================================================
+   TRANSITIONS
+   ================================================================= */
+
+.transition-none { transition: none; }
+.transition-all { transition: all var(--transition-base); }
+.transition-colors { transition: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base); }
+.transition-opacity { transition: opacity var(--transition-base); }
+.transition-transform { transition: transform var(--transition-base); }

@@ -1,0 +1,353 @@
+/* =================================================================
+   FORM COMPONENTS
+   All form styles with integrated responsive behavior
+   ================================================================= */
+
+/* Base Form Styles */
+.form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--color-dark);
+}
+
+.form-required {
+    color: #ef4444;
+    margin-left: var(--space-xs);
+}
+
+/* Form Inputs */
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    font-size: var(--text-base);
+    transition: all var(--transition-base);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-brand-green);
+    box-shadow: 0 0 0 3px rgba(30, 58, 43, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: var(--leading-relaxed);
+}
+
+.form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236B7280' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-md) center;
+    padding-right: var(--space-2xl);
+}
+
+/* Form Validation */
+.form-input--error,
+.form-textarea--error {
+    border-color: #ef4444;
+}
+
+.form-input--error:focus,
+.form-textarea--error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-error {
+    display: block;
+    font-size: var(--text-sm);
+    color: #ef4444;
+    margin-top: var(--space-xs);
+}
+
+.form-success {
+    display: block;
+    font-size: var(--text-sm);
+    color: #10b981;
+    margin-top: var(--space-xs);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+/* =================================================================
+   SUBSCRIPTION FORMS
+   ================================================================= */
+
+/* Subscribe Form Base */
+.subscribe-form {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.subscribe-form .form-input {
+    flex: 1;
+}
+
+/* Subscribe Success */
+.subscribe-success {
+    padding: var(--space-lg);
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.subscribe-success h3 {
+    color: #16a34a;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.subscribe-success p {
+    color: #15803d;
+    margin-bottom: 0;
+}
+
+/* =================================================================
+   CONTACT FORM
+   ================================================================= */
+
+.contact-form {
+    background-color: var(--color-bg);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+/* Contact Success Message */
+.contact-success {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-bg);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+    z-index: var(--z-modal);
+    max-width: 400px;
+}
+
+.contact-success h3 {
+    font-size: var(--text-2xl);
+    color: #16a34a;
+    margin-bottom: var(--space-md);
+}
+
+/* =================================================================
+   BUTTON STYLES
+   ================================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: var(--text-base);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Button Variants */
+.btn--primary {
+    background-color: var(--color-brand-green);
+    color: white;
+}
+
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-brand-green);
+    border: 2px solid var(--color-brand-green);
+}
+
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-brand-green);
+    color: white;
+}
+
+.btn--ghost {
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.btn--ghost:hover:not(:disabled) {
+    background-color: var(--color-light-gray);
+}
+
+/* Button Sizes */
+.btn--sm {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-sm);
+}
+
+.btn--lg {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--text-lg);
+}
+
+/* Button States */
+.btn--loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn--loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =================================================================
+   TABLET STYLES (768px - 1023px)
+   ================================================================= */
+@media (max-width: 1023px) {
+    .contact-form {
+        padding: var(--space-xl);
+    }
+}
+
+/* =================================================================
+   MOBILE STYLES (< 768px)
+   ================================================================= */
+@media (max-width: 767px) {
+    /* Stack form inputs on mobile */
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form .form-input {
+        width: 100%;
+    }
+    
+    /* Contact form adjustments */
+    .contact-form {
+        padding: var(--space-lg);
+    }
+    
+    .contact-form h3 {
+        font-size: var(--text-xl);
+    }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Smaller inputs on mobile */
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--text-sm);
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--text-sm);
+    }
+    
+    .btn--sm {
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--text-xs);
+    }
+    
+    .btn--lg {
+        padding: var(--space-md) var(--space-xl);
+        font-size: var(--text-base);
+    }
+    
+    /* Stack form actions on mobile */
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+/* =================================================================
+   EXTRA SMALL MOBILE (< 480px)
+   ================================================================= */
+@media (max-width: 479px) {
+    .contact-form {
+        padding: var(--space-md);
+    }
+    
+    .contact-form h3 {
+        font-size: var(--text-lg);
+    }
+    
+    .form-label {
+        font-size: var(--text-sm);
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: var(--space-xs) var(--space-sm);
+    }
+}
