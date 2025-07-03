@@ -1,0 +1,460 @@
+/* --- RESPONSIVENESS --- */
+
+/* Ensure no horizontal scrolling on mobile */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Base mobile utilities */
+* {
+    box-sizing: border-box;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1220px) { /* MODIFIED: Breakpoint changed from 1140px to 1220px */
+    /* Prevent nav link wrapping by reducing space between items */
+    .main-nav > ul {
+        gap: 24px;
+    }
+
+    /* Reduce the dropdown gap on smaller screens */
+    .dropdown:hover .dropdown-menu {
+        transform: translateY(4px);
+    }
+    .dropdown-menu {
+        transform: translateY(14px);
+    }
+    .dropdown::after {
+        height: 4px; /* Ensure the invisible bridge matches the new gap */
+    }
+
+    #home-page .content-grid { grid-template-columns: 1fr; gap: 80px; }
+    .main-nav { display: none; } /* Hide main nav on tablets by default */
+    .mobile-toggle { display: block; }
+    
+    /* When search is active on tablet, hide mobile toggle */
+    body.search-active .mobile-toggle { display: none; }
+
+    #home-page .welcome-section h1 { font-size: 48px; }
+    #home-page .article-title-large { font-size: 40px; }
+    
+    /* --- NEW: Mobile Accordion Menu Styles --- */
+    .main-header.nav-open .main-nav {
+        display: block; position: absolute; top: 100%; left: 0;
+        width: 100%; background-color: var(--color-bg); padding: 1rem 0;
+        border-top: 1px solid var(--color-border); box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .main-header.nav-open .main-nav ul { flex-direction: column; width: 100%; gap: 0; }
+    .main-header.nav-open .main-nav li { margin: 0; text-align: left; border-bottom: 1px solid var(--color-border); }
+    .main-header.nav-open .main-nav li:first-child { border-top: 1px solid var(--color-border); }
+    
+    /* Style all links in the mobile menu */
+    .main-header.nav-open .main-nav a { 
+        padding: 1rem 1.5rem; 
+        display: block; 
+        border-bottom: none; 
+    }
+
+    /* Override dropdown behavior for mobile */
+    .main-header.nav-open .dropdown-menu { 
+        position: static; 
+        display: none; /* Sub-menus are hidden by default */
+        opacity: 1; 
+        visibility: visible;
+        transform: none; 
+        box-shadow: none; 
+        background-color: var(--color-light-gray); /* Light gray for sub-items */
+        padding: 0; 
+        border: none;
+        min-width: 100%;
+        border-radius: 0;
+    }
+    
+    /* Show the sub-menu when the parent has the .is-open class */
+    .main-header.nav-open .dropdown.is-open .dropdown-menu {
+        display: block;
+    }
+
+    /* Style the sub-menu items */
+    .main-header.nav-open .dropdown-menu li {
+        border-color: #e0e0e0;
+    }
+    .main-header.nav-open .dropdown-menu a {
+        padding-left: 2.5rem; /* Indent sub-items */
+        font-weight: 400;
+        color: var(--color-text-secondary);
+    }
+    .main-header.nav-open .dropdown-menu a:hover {
+        color: var(--color-dark);
+    }
+    
+    /* Style the parent dropdown link to make space for the button */
+    .main-header.nav-open .dropdown > a.nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* NEW: Style the dedicated toggle button */
+    .main-header.nav-open .submenu-toggle {
+        display: inline-block; /* This now correctly OVERRIDES the default 'none' state */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--color-text-secondary);
+        line-height: 1; /* Prevent extra vertical space */
+    }
+}
+@media (max-width: 768px) {
+    .container { padding: 0 20px; width: 100%; }
+    .nav-container { padding: 0 15px; }
+    
+    /* Header mobile fixes */
+    .main-header {
+        height: 80px; /* Increased from 70px */
+    }
+    
+    .logo {
+        font-size: 24px; /* Smaller logo on mobile */
+    }
+    
+    /* Ensure hamburger menu is always visible on mobile */
+    .mobile-toggle {
+        display: block !important;
+        font-size: 1.8rem;
+        padding: 10px;
+        margin-right: -10px; /* Compensate for padding */
+    }
+    
+    /* Ensure search icon is visible on mobile */
+    #search-icon-btn {
+        display: flex !important;
+        padding: 8px;
+    }
+    
+    /* Subscribe button on mobile */
+    .header-right .button-primary {
+        display: block; /* Make subscribe button visible in header on mobile */
+    }
+    
+    /* When search is active on mobile, hide the logo too */
+    body.search-active .logo { display: none; }
+    
+    /* News ticker mobile fixes */
+    .news-ticker-container {
+        padding: 0.8rem 0; /* Increased from 0.5rem */
+        font-size: 0.8rem;
+    }
+    
+    .ticker-label {
+        margin-left: 15px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+    
+    .ticker-group a {
+        padding: 0 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Prevent ticker from causing horizontal scroll */
+    .ticker-wrap {
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    /* Home page mobile fixes */
+    #home-page .recent-grid { grid-template-columns: repeat(2, 1fr); }
+    #home-page .welcome-section { padding-top: 40px; padding-bottom: 20px; }
+    #home-page .welcome-section h1 { font-size: 36px; line-height: 1.3; }
+    
+    /* Article page mobile fixes */
+    .single-article-wrapper {
+        padding: 0;
+    }
+    
+    .single-article-header h1 { 
+        font-size: 2.2rem; 
+        line-height: 1.2;
+        margin: 1rem 0;
+    }
+    
+    .single-article-description {
+        font-size: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .single-article-image {
+        max-height: none; 
+        height: auto; 
+        width: 100%;
+        margin: 2rem auto;
+    }
+    
+    .single-article-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Staff bio grid fixes */
+    .staff-bio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .page-header h1 {
+        word-wrap: break-word;
+    }
+
+    /* About page mobile fixes */
+    .about-page .page-header h1 {
+        font-size: 2.2rem;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    
+    .about-page .container {
+        padding: 2rem 20px;
+    }
+    
+    /* Staff grid mobile layout */
+    .staff-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+        gap: 1.5rem;
+    }
+    
+    /* Contact page mobile fixes */
+    .contact-page .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        border-radius: 8px;
+    }
+    
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem; 
+    }
+    
+    /* Footer CTA mobile fixes */
+    .footer-cta { 
+        padding: 60px 20px;
+        overflow: hidden; 
+    }
+    
+    .footer-cta h2 { 
+        font-size: 28px;
+        line-height: 1.3;
+        padding: 0 10px;
+    }
+    
+    .footer-cta .form-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .footer-cta #subscribe-form-footer {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .footer-cta #subscribe-email-footer {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+    
+    .footer-cta .button-subscribe {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    
+    /* This rule is highly specific and will NOT affect the issues page */
+    .article-grid-page .article-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Modal mobile fixes */
+    .modal-body { flex-direction: column; }
+    .modal-img { width: 100%; height: 250px; }
+    
+    .page-content,
+    .section-content {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .subscribe-page .subscribe-content {
+        padding: 0 1rem;
+    }
+    .subscribe-page .subscribe-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    
+    /* --- THE EXACT MOBILE LAYOUT YOU WANTED FOR THE ISSUES PAGE --- */
+    #issues-page .container {
+        /* Widen the container by reducing its side padding */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #issues-page .issue-list {
+        /* Remove the list's own padding and define the wider grid columns */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 0 4rem 0;
+    }
+    #issues-page .issue-card {
+        padding: 1.5rem;
+    }
+    #issues-page .issue-actions {
+        /* Allow buttons to be side-by-side if space permits */
+        flex-wrap: wrap;
+    }
+    #issues-page .issue-btn {
+        flex-grow: 1;
+    }
+}
+
+/* Extra small mobile devices (< 480px) */
+@media (max-width: 480px) {
+    /* Ultra-compact header */
+    .main-header {
+        height: 60px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+        gap: 0.5rem;
+    }
+    
+    .header-right {
+        gap: 8px;
+    }
+    
+    #search-icon-btn {
+        padding: 6px;
+    }
+    
+    .mobile-toggle {
+        font-size: 1.5rem;
+        padding: 8px;
+        margin-right: -8px;
+    }
+    
+    .ticker-label {
+        display: none; 
+    }
+    
+    .ticker-group a {
+        font-size: 0.8rem;
+        padding: 0 0.75rem;
+    }
+    
+    #home-page .welcome-section h1 {
+        font-size: 26px;
+    }
+    
+    .single-article-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .single-article-content p {
+        font-size: 1rem;
+    }
+    
+    .about-page .container {
+        padding: 1.5rem 15px;
+    }
+    
+    .about-page .page-header p {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .about-page .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .staff-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        gap: 1rem;
+        padding: 0;
+    }
+    
+    .staff-card {
+        padding: 0.5rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .contact-form-wrapper h3 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-cta {
+        padding: 40px 15px;
+    }
+    
+    .footer-cta h2 {
+        font-size: 24px;
+    }
+    
+    .footer-cta #subscribe-email-footer,
+    .footer-cta .button-subscribe {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+    
+    .article-grid-page .article-grid {
+        gap: 1.5rem;
+    }
+    
+    .subscribe-page .subscribe-content h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Further refine issue list for very small screens */
+    #issues-page .issue-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    #header-search-container {
+        padding: 0 20px; 
+    }
+    #header-search-form {
+        padding: 10px 0; 
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-details-card {
+        padding: 2rem 1.5rem; 
+    }
+    .contact-details-card .contact-info-list li {
+        font-size: 0.8rem;
+    }
+}
